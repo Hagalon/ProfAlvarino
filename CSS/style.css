@@ -12,6 +12,11 @@ header{
     text-align: center;
 }
 
+footer{
+    display: grid;
+grid-template-columns: 1fr 100px;
+}
+
 nav{
     text-align: center;
     overflow: hidden;
@@ -68,4 +73,8 @@ iframe{
 
 .active{
     color: hsl(54, 100%, 76%);
+}
+
+hr.plog-head{
+        
 }
