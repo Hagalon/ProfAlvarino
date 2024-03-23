@@ -56,8 +56,7 @@ iframe{
     width: 44%;
     padding: 2%;
     margin: 1%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     background: whitesmoke;
 }
 
@@ -66,8 +65,7 @@ iframe{
     width: 94%;
     padding: 2%;
     margin: 1%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     background: whitesmoke;
 }
 
