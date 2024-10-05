@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{desenhando}
+
+\begin{document}
+\begin{tikzpicture}
+    \calendar(cal)[every day/.style={anchor=mid},dates=2024-10-01 to 2024-10-last,week list, month label above centered]
+    if (weekend)            [black!50]
+    if (equals=\year-\month-\day) {\draw (-6pt,-5pt)rectangle(6pt,6pt);}
+    if (at most=\year-\month-\day+-1) [nodes={strike out,draw}]
+    if (equals=2024-10-26) [red]
+    if (equals=2024-10-17) [orange]
+    if (equals=2024-10-30) [orange]
+    if (between=2024-11-27 and 2024-11-29) [red];
+    \node (A) at (1.5,-2.4) {17: Mensal 1A};
+    \node (B) [below=.1cm of A] {26: Simulado SAS} ;
+    \node (C) [,below=.1cm of B,] {30: Mensal 2A} ;
+\end{tikzpicture}
+\begin{tikzpicture}
+    \calendar(cal)[every day/.style={anchor=mid},dates=2024-11-01 to 2024-11-last,week list, month label above centered]
+    if (weekend)            [black!50]
+    if (equals=\year-\month-\day) {\draw (-6pt,-5pt)rectangle(6pt,6pt);}
+    if (at most=\year-\month-\day+-1) [nodes={strike out,draw}]
+    if (equals=2024-11-03) [red]
+    if (equals=2024-11-07) [green!50!black]
+    if (equals=2024-11-10) [red]
+    if (equals=2024-11-17) [red!50!black]
+    if (between=2024-11-27 and 2024-11-29) [red];
+    \node (A) at (1.5,-2.4) {3 e 10: ENEM};
+    \node (B) [below=.1cm of A] {17: FUVEST} ;
+    \node (C) [,below=.1cm of B,] {27-29: Bimestrais} ;
+\end{tikzpicture}
+\end{document}
