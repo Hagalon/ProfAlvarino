@@ -54,6 +54,8 @@ iframe{
 .coluna{
     float: left;
     width: 44%;
+    /* height: auto; */
+    /* min-width: fit-content; */
     padding: 2%;
     margin: 1%;
     border-radius: 10px;
