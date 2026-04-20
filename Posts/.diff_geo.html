@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometria Diferencial - Physics Corner</title>
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal + CSS do Post -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../post.css">
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Início</a>
+    <span class="separator">/</span>
+    <a href="../index.html" onclick="window.history.back(); return false;">Feed</a>
+    <span class="separator">/</span>
+    <span class="post-category current" id="post-category-display">Matemática</span>
+    <span class="separator">/</span>
+    <span class="current">Geometria Diferencial</span>
+  </nav>
+
+  <!-- Container do Post -->
+  <article class="post-container">
+    
+    <!-- Cabeçalho -->
+    <header class="post-header">
+      <!-- Metadados para extração Python -->
+      <span class="post-category" style="display: none;">Matemática</span>
+      <span class="post-date" style="display: none;">2026-04-19</span>
+      <span class="post-author" style="display: none;">Rodrigo Alvarino</span>
+      <span class="post-icon" style="display: none;">Ícone</span>
+      <span class="post-excerpt" style="display: none;">A geometria diferencial é uma área muito importante, que estuda propriedades diferenciais de espaços geométricos, e é útil ao aestudo de topologia e análise tensorial.</span>
+      
+      <!-- Conteúdo visível -->
+      <div class="post-category">Matemática</div>
+      <h1 class="post-title">Geometria Diferencial</h1>
+      
+      <div class="post-meta-detail">
+        <span class="author">Rodrigo Alvarino</span>
+        <span class="date">19 de Abril, 2026</span>
+        <span class="read-time">8 min de leitura</span>
+      </div>
+    </header>
+    
+    <!-- Imagem Destacada (opcional) -->
+    <div class="post-featured-image">
+      🦝
+    </div>
+    
+    <!-- Conteúdo do Post -->
+    <div class="post-content">
+      <h2>Definições</h2>
+      <p>texto...</p>
+      <h2>Comprimento de Arco</h2>
+      <p>texto...</p>
+      <h2>Curvatura</h2>
+      <p>texto...</p>
+      <!-- Continue o conteúdo aqui -->
+    </div>
+    
+    <!-- Rodapé do Post -->
+    <footer class="post-footer-detail">
+      
+      <!-- Tags -->
+      <div class="post-tags">
+        <span class="post-tags-label">Tags:</span>
+        <a href="#" class="post-tag">Matemática</a>
+        <a href="#" class="post-tag">Educação</a>
+        <a href="#" class="post-tag">Pesquisa</a>
+      </div>
+      
+      <!-- Compartilhamento -->
+      
+      <!-- Navegação entre posts -->
+    </footer>
+    
+  
+  <!-- Rodapé do Site -->
+  <footer class="site-footer">
+    © 2026 Physics Corner • <a href="../index.html">Voltar ao início</a>
+  </footer>
+</div>
+
+<!-- Script opcional para funcionalidades extras -->
+<script>
+  // Destacar link atual, calcular tempo de leitura, etc.
+  document.addEventListener('DOMContentLoaded', function() {
+    // Calcular tempo de leitura automaticamente
+    const content = document.querySelector('.post-content');
+    if (content) {
+      const words = content.textContent.trim().split(/\s+/).length;
+      const readTime = Math.ceil(words / 200); // 200 palavras por minuto
+      const readTimeSpan = document.querySelector('.read-time');
+      if (readTimeSpan) {
+        readTimeSpan.textContent = `${readTime} min de leitura`;
+      }
+    }
+  });
+</script>
+</body>
+</html>

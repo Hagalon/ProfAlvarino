@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca de Artigos - Physics Corner</title>
+  
+  <!-- Fontes e CSS principal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Estilos específicos para a tabela da biblioteca -->
+  <style>
+    /* Container da biblioteca */
+    .library-container {
+      background: white;
+      border-radius: 24px;
+      padding: 24px 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #eef2f6;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+
+    .library-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .library-header h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box {
+      padding: 10px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      width: 260px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-box:focus {
+      border-color: #2563eb;
+    }
+
+    /* Tabela */
+    .articles-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .articles-table th {
+      text-align: left;
+      padding: 16px 12px;
+      background: #f8fafc;
+      color: #1e293b;
+      font-weight: 600;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+
+    .articles-table td {
+      padding: 16px 12px;
+      border-bottom: 1px solid #eef2f6;
+      color: #334155;
+      vertical-align: middle;
+    }
+
+    .articles-table tbody tr:hover {
+      background: #fafcff;
+    }
+
+    /* Link do título */
+    .article-title a {
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .article-title a:hover {
+      color: #2563eb;
+    }
+
+    .pdf-icon {
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+    /* Botão dropdown */
+    .review-toggle {
+      background: none;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+      background: white;
+    }
+
+    .review-toggle:hover {
+      background: #eef6ff;
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .review-toggle.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: white;
+    }
+
+    /* Linha de resenha (expansível) */
+    .review-row {
+      display: none;
+      background: #fbfdff;
+    }
+
+    .review-row.show {
+      display: table-row;
+    }
+
+    .review-cell {
+      padding: 20px 24px !important;
+      color: #334155;
+      line-height: 1.7;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .review-content {
+      max-width: 800px;
+    }
+
+    .review-label {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 700px) {
+      .library-container {
+        padding: 16px;
+      }
+      
+      .articles-table th,
+      .articles-table td {
+        padding: 12px 8px;
+      }
+      
+      .articles-table {
+        font-size: 0.85rem;
+      }
+      
+      .review-toggle span {
+        display: none; /* esconde texto, mostra só ícone em mobile */
+      }
+      
+      .review-toggle::after {
+        content: "▼";
+        font-size: 0.7rem;
+      }
+    }
+
+    /* ===== DARK MODE - Ativado automaticamente pela preferência do sistema ===== */
+    @media (prefers-color-scheme: dark) {
+      
+      /* Container principal */
+      .library-container {
+        background: #1e293b;
+        border: 1px solid #334155;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Cabeçalho */
+      .library-header h2 {
+        color: #f1f5f9;
+      }
+      
+      /* Caixa de busca */
+      .search-box {
+        background: #0f172a;
+        border: 1px solid #334155;
+        color: #e2e8f0;
+      }
+      
+      .search-box:focus {
+        border-color: #60a5fa;
+      }
+      
+      .search-box::placeholder {
+        color: #64748b;
+      }
+      
+      /* Tabela - cabeçalho */
+      .articles-table th {
+        background: #0f172a;
+        color: #f1f5f9;
+        border-bottom-color: #334155;
+      }
+      
+      /* Tabela - células */
+      .articles-table td {
+        border-bottom-color: #334155;
+        color: #cbd5e1;
+      }
+      
+      .articles-table tbody tr:hover {
+        background: #2d3748;
+      }
+      
+      /* Links dos títulos */
+      .article-title a {
+        color: #f1f5f9;
+      }
+      
+      .article-title a:hover {
+        color: #60a5fa;
+      }
+      
+      .pdf-icon {
+        opacity: 0.8;
+      }
+      
+      /* Botão dropdown */
+      .review-toggle {
+        background: #0f172a;
+        border-color: #334155;
+        color: #94a3b8;
+      }
+      
+      .review-toggle:hover {
+        background: #2d3748;
+        border-color: #60a5fa;
+        color: #60a5fa;
+      }
+      
+      .review-toggle.active {
+        background: #3b82f6;
+        border-color: #3b82f6;
+        color: white;
+      }
+      
+      /* Linha de resenha expansível */
+      .review-row {
+        background: #1a2538;
+      }
+      
+      .review-cell {
+        color: #cbd5e1;
+        border-bottom-color: #334155;
+        background: #0f172a;
+      }
+      
+      .review-label {
+        color: #f1f5f9;
+      }
+      
+      .review-content {
+        color: #cbd5e1;
+      }
+      
+      /* Garantir que qualquer texto adicional fique legível */
+      .library-container p,
+      .library-container li,
+      .library-container span:not(.pdf-icon) {
+        color: #cbd5e1;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  
+  <!-- HEADER -->
+  <header class="site-header">
+    <h1>⚛ Physics Corner</h1>
+    <p>Biblioteca de Artigos & Leituras</p>
+  </header>
+
+  <!-- NAVEGAÇÃO (mesma do site) -->
+  <nav class="nav-bar">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+      
+      <li class="nav-item"><a href="biblioteca.html" class="nav-link active">Biblioteca</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="content-grid" style="grid-template-columns: 1fr;">
+    <main>
+      <div class="library-container">
+        <div class="library-header">
+          <h2>
+            <span>📚</span> Artigos & Livros 
+          </h2>
+          <input type="text" class="search-box" id="search-input" placeholder="🔍 Filtrar por título ou autor...">
+        </div>
+        
+        <table class="articles-table" id="library-table">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Data</th>
+              <th style="text-align: center;">Resenha</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Os dados serão carregados via JavaScript -->
+          </tbody>
+        </table>
+        <p id="no-results" style="text-align: center; padding: 30px; color: #64748b; display: none;">Nenhum artigo encontrado.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    © 2026 Physics Corner • <a href="index.html">Início</a> • <a href="biblioteca.html">Biblioteca</a>
+  </footer>
+</div>
+
+<script>
+  // Dados da biblioteca (poderiam vir de um JSON futuramente)
+  let artigos = [];
+fetch('biblioteca.json')
+  .then(res => res.json())
+  .then(data => {
+    artigos = data;
+    renderizarTabela();
+  });
+
+  const tbody = document.getElementById('table-body');
+  const searchInput = document.getElementById('search-input');
+  const noResults = document.getElementById('no-results');
+
+  // Função para renderizar a tabela com filtro opcional
+  function renderizarTabela(filtro = '') {
+    const termo = filtro.toLowerCase().trim();
+    const artigosFiltrados = artigos.filter(art => 
+      art.titulo.toLowerCase().includes(termo) || 
+      art.autor.toLowerCase().includes(termo)
+    );
+
+    if (artigosFiltrados.length === 0) {
+      tbody.innerHTML = '';
+      noResults.style.display = 'block';
+      return;
+    }
+    noResults.style.display = 'none';
+
+    let html = '';
+    artigosFiltrados.forEach((art, index) => {
+      // ID único para controlar a resenha
+      const reviewId = `review-${index}`;
+      
+      html += `
+        <tr class="main-row">
+          <td class="article-title">
+            <a href="${art.pdf}" target="_blank">
+              <span class="pdf-icon">📄</span> ${art.titulo}
+            </a>
+          </td>
+          <td>${art.autor}</td>
+          <td>${art.data}</td>
+          <td style="text-align: center;">
+            <button class="review-toggle" data-review-id="${reviewId}" onclick="toggleReview('${reviewId}', this)">
+              <span>Resenha</span> ▼
+            </button>
+          </td>
+        </tr>
+        <tr class="review-row" id="${reviewId}">
+          <td colspan="4" class="review-cell">
+            <div class="review-content">
+              <div class="review-label">📝 Minha resenha:</div>
+              ${art.resenha}
+            </div>
+          </td>
+        </tr>
+      `;
+    });
+    tbody.innerHTML = html;
+  }
+
+  // Função global para alternar a exibição da resenha
+  window.toggleReview = function(reviewId, button) {
+    const reviewRow = document.getElementById(reviewId);
+    if (reviewRow) {
+      reviewRow.classList.toggle('show');
+      button.classList.toggle('active');
+      // Muda o ícone do botão (opcional)
+      const arrow = button.classList.contains('active') ? '▲' : '▼';
+      button.innerHTML = `<span>Resenha</span> ${arrow}`;
+    }
+  };
+
+  // Filtro em tempo real
+  searchInput.addEventListener('input', (e) => {
+    renderizarTabela(e.target.value);
+  });
+
+  // Renderiza inicialmente
+  renderizarTabela();
+</script>
+</body>
+</html>

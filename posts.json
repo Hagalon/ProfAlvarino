@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Particle Accelerators",
+    "categoria": "Física",
+    "data": "23/08/2025",
+    "autor": "Rodrigo Alvarino",
+    "icone": "../Media/Blog/post-images/alice_1.jpg",
+    "resumo": "A\n        linear accelerator (LINAC)\n        is a type of particle accelerator that accelerates charged\n      particles along a straight path using alternating electric fields. The particles gain energy as they travel...",
+    "link": "Posts/accelerators.html"
+  },
+  {
+    "titulo": "Cern e o projeto ALICE",
+    "categoria": "Física",
+    "data": "18/08/2025",
+    "autor": "Rodrigo Alvarino",
+    "icone": "../Media/Blog/post-images/alice_1.jpg",
+    "resumo": "O CERN (Organização Europeia para a Pesquisa Nuclear) é o maior e mais respeitado centro de pesquisa em física de partículas do mundo...",
+    "link": "Posts/Alice-project.html"
+  }
+]

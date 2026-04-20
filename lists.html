@@ -1,29 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Corner</title>
-    <link rel="icon" href="psi2.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/style.css">
-  </head>
-  <body>
-    <header class="head">
-      <h1>Listas e Problemas</h1>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listas de Exercício - Physics Corner</title>
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal + CSS do Post -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="post.css">
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Início</a>
+    <span class="separator">/</span>
+    <a href="../index.html" onclick="window.history.back(); return false;">Feed</a>
+    <span class="separator">/</span>
+    <span class="post-category current" id="post-category-display">Ensino</span>
+    <span class="separator">/</span>
+    <span class="current">Listas</span>
+  </nav>
+
+  <!-- Container do Post -->
+  <article class="post-container">
+    
+    <!-- Cabeçalho -->
+    <header class="post-header">
+      <!-- Metadados para extração Python -->
+      <span class="post-category" style="display: none;">Ensino</span>
+      <span class="post-date" style="display: none;">2023-06-07</span>
+      <span class="post-author" style="display: none;">Rodrigo Alvarino</span>
+      <span class="post-icon" style="display: none;">📑</span>
+      <span class="post-excerpt" style="display: none;">Listas de Exercícios</span>
+      
+      <!-- Conteúdo visível -->
+      <div class="post-category">Ensino</div>
+      <h1 class="post-title">Listas / Problem Sets</h1>
+      
+      <div class="post-meta-detail">
+        <span class="author">Rodrigo Alvarino</span>
+        <span class="date">07 de Junho, 2023</span>
+        <span class="read-time">8 min de leitura</span>
+      </div>
     </header>
-    <nav class="menu">
-      <a href="index.html">..Main</a>
-      <a href="teaching.html">.Teaching</a>
-    </nav>
-    <div class="plain">
-      <h2>Aulas Gravadas</h2>
-      <!-- <a href="../../../compilado_questoes.pdf">Questões 08/10/24</a> -->
-      <!-- <a href="resumos/cinetica-gases.pdf">Cinética dos Gases</a> -->
-      <p style="color: gray;">Em breve</p><a href="aulas_gravadas.html">...</a>
-      <br>
-      <a href="Media/pdfs/emedio-listas/tecnicas.pdf">Técnicas de Estudo</a>
+    
+    <!-- Imagem Destacada (opcional) -->
+    <div class="post-featured-image">
+    <img src="Media/Blog/post-images/physics_doodle.jpg" alt=""> 
     </div>
-    <div class="plain">
+    
+    <!-- Conteúdo do Post -->
+    <div class="post-content">
       <h2>Mecânica Clássica (EM)</h2>
       <a href="Media/pdfs/emedio-listas/intro_ciencia.pdf">Introdução à Ciência</a><br>
       <a href="Media/pdfs/emedio-listas/Vetores.pdf">Vetores</a>
@@ -48,8 +84,7 @@
       <a href="Media/pdfs/emedio-listas/Hidrostática.pdf">Hidrostática</a>
       <br>
       <a href="#">Relatividade Especial</a>
-    </div>
-    <div class="plain">
+
       <h2>Termodinâmica e Ondulatória (EM)</h2>
       <a href="Media/pdfs/emedio-listas/Termologia.pdf">Termologia</a>
       <br>
@@ -74,9 +109,7 @@
       <a href="#">Ondulatória 2 (avançado)</a>
       <br>
       <a href="Media/pdfs/emedio-listas/Acustica.pdf">Acústica</a>
-      <br>
-    </div>
-    <div class="plain">
+
       <h2>Eletromagnetismo (EM)</h2>
       <a href="Media/pdfs/emedio-listas/eletrostatica.pdf">Eletrostática</a>
       <a href="Media/pdfs/emedio-listas/eletrostatica_gabarito.pdf">Gabarito</a>
@@ -95,9 +128,7 @@
       <br>
       <a href="Media/pdfs/emedio-listas/Indução_eletromagnetica.pdf">Indução Eletromagnética</a>
       <a href="#">Estrutura da Matéria</a>
-      <br>
-    </div>
-    <div class="plain">
+
       <h2>Tópicos Introdutórios em Exatas</h2>
       <a href="#">Geometria Analítica</a>
       <br>
@@ -112,19 +143,13 @@
       <a href="Media/pdfs/calculo/limites.pdf">Limites</a>
       <br>
       <a href="Media/pdfs/calculo/derivadas.pdf">Derivadas</a>
-      <br>
-    </div>
-    <div class="plain">
+
       <h2>ITA</h2>
       <a href="ITA/cinematica_cinematica_no_vestibular_do_ita.pdf">Cinemática</a>
-      <br>
-    </div>
-    <div class="plain">
+
       <h2>Accelerator Physics</h2>
       <a href="Media/pdfs/accelerator_basic_concepts.pdf">Basic Concepts</a>
-    </div>
-    <hr>
-    <div class="coluna">
+
       <h2>Letramento Matemático</h2>
       <a href="Media/pdfs/Mat-letramento/Adição_Subtração.pdf">Adição e Subtração</a>
       <br>
@@ -138,9 +163,8 @@
       <br>
       <a href="Media/pdfs/Mat-letramento/Frações.pdf">Frações</a>
       <br>
-      <a href="Mat-letramento/potenciação.pdf">Potenciação 1</a>
-      <a href="Media/pdfs/Mat-letramento/Potenciação(1-5).pdf">Potenciação 2</a>
-      <a href="Media/pdfs/Mat-letramento/Potenciação(6).pdf">Potenciação 3</a>
+      <a href="Media/pdfs/Mat-letramento/Potenciação(1-5).pdf">Potenciação 1</a>
+      <a href="Media/pdfs/Mat-letramento/Potenciação(6).pdf">Potenciação 2</a>
       <br>
       <a href="Media/pdfs/Mat-letramento/Expressões Algébricas.pdf">Expressões Algébricas</a>
       <br>
@@ -161,9 +185,47 @@
       <a href="Media/pdfs/Mat-letramento/Interpretação.pdf">Interpretação / Leitura Matemática</a>
       <br>
       <a href="Media/pdfs/demonstrations.pdf">Demonstrações Matemáticas</a>
+
     </div>
-    <div class="coluna" style="border-radius: 50%;">
-      <img src="Media/racoonarithmetics.gif" alt="Racoon with Abbacus" style="width: 100%; border-radius: 50%;">
-    </div>
-  </body>
+    
+    <!-- Rodapé do Post -->
+    <footer class="post-footer-detail">
+      
+      <!-- Tags -->
+      <div class="post-tags">
+        <span class="post-tags-label">Tags:</span>
+        <a href="#" class="post-tag">Ciência</a>
+        <a href="#" class="post-tag">Educação</a>
+        <a href="#" class="post-tag">Pesquisa</a>
+      </div>
+      
+      <!-- Compartilhamento -->
+      
+      <!-- Navegação entre posts -->
+    </footer>
+    
+  
+  <!-- Rodapé do Site -->
+  <footer class="site-footer">
+    © 2026 Physics Corner • <a href="../index.html">Voltar ao início</a>
+  </footer>
+</div>
+
+<!-- Script opcional para funcionalidades extras -->
+<script>
+  // Destacar link atual, calcular tempo de leitura, etc.
+  document.addEventListener('DOMContentLoaded', function() {
+    // Calcular tempo de leitura automaticamente
+    const content = document.querySelector('.post-content');
+    if (content) {
+      const words = content.textContent.trim().split(/\s+/).length;
+      const readTime = Math.ceil(words / 200); // 200 palavras por minuto
+      const readTimeSpan = document.querySelector('.read-time');
+      if (readTimeSpan) {
+        readTimeSpan.textContent = `${readTime} min de leitura`;
+      }
+    }
+  });
+</script>
+</body>
 </html>
