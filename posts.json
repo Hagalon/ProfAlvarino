@@ -1,11 +1,20 @@
 [
   {
+    "titulo": "Distribuição Binomial",
+    "categoria": "Estatística",
+    "data": "15/05/2026",
+    "autor": "Rodrigo Alvarino",
+    "icone": "https://i.ytimg.com/vi/8idr1WZ1A7Q/maxresdefault.jpg",
+    "resumo": "",
+    "link": "Posts/distribuição_binomial.html"
+  },
+  {
     "titulo": "Particle Accelerators",
     "categoria": "Física",
     "data": "23/08/2025",
     "autor": "Rodrigo Alvarino",
     "icone": "Media/Blog/post-images/alice_1.jpg",
-    "resumo": "A linear accelerator (LINAC) is a type of particle accelerator that accelerates charged particles along a straight path using alternating electric fields. The particles gain energy as they travel...",
+    "resumo": "A\n        linear accelerator (LINAC)\n        is a type of particle accelerator that accelerates charged\n      particles along a straight path using alternating electric fields. The particles gain energy as they travel...",
     "link": "Posts/accelerators.html"
   },
   {
