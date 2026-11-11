@@ -1,5 +1,14 @@
 [
   {
+    "titulo": "A Quadratura do Círculo",
+    "categoria": "Categoria",
+    "data": "11/11/2026",
+    "autor": "Rodrigo Alvarino",
+    "icone": "⧇",
+    "resumo": "Como a Álgebra decidiu um problema antigo de Geometria...",
+    "link": "Posts/quadratura_do_circulo.html"
+  },
+  {
     "titulo": "Distribuição Binomial",
     "categoria": "Estatística",
     "data": "15/05/2026",
